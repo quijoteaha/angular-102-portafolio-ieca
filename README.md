@@ -79,4 +79,4 @@ Quizá te preguntes __¿Cómo es que puedo actualizar mi `fork` 🤔?__, <ins>du
 - Si no logras llegar a los resultados, ve registrando tus `avances` en tu rama de trabajo para tener registro de tus evidencias
 
 > La práctica hace al maestro 🎹  
-> No te presiones, como mencionaba arriba intenta hacer los ejercicios 🧘🧘‍♀️
+> No te presiones, como mencionaba arriba intenta hacer los ejercicios 🧘🧘‍♀️!!
