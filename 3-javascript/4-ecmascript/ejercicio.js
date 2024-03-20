@@ -27,9 +27,13 @@ class ListaNumeros {
         */
        
         // Calculo de la media
-        const media = this.numeros.reduce((a, b) => a + b, 0) / this.numeros.length
-
+        const media = this.numeros.reduce((a, b) => a + b, 0) / this.numeros.length;
+        
         // COMPLETA AQUÍ CÓDIGO CON MÉTODO .filter
+
+        const mayoresMedia = this.numeros.filter(num => num > media);
+
+        console.log(mayoresMedia);
     }
 
     ordenamientoMayorAMenor() {
@@ -42,6 +46,7 @@ class ListaNumeros {
         */
 
         // COMPLETA AQUÍ CÓDIGO CON MÉTODO .sort
+        const ordenados = this.numeros.sort(function(a, b){return b - a});
 
         console.log(this.numeros)
     }
