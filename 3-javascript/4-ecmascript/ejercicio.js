@@ -46,7 +46,7 @@ class ListaNumeros {
         */
 
         // COMPLETA AQUÍ CÓDIGO CON MÉTODO .sort
-        const ordenados = this.numeros.sort(function(a, b){return b - a});
+        this.numeros.sort(function(a, b){return b - a});
 
         console.log(this.numeros)
     }
