@@ -11,7 +11,7 @@
     </div>
     <div style="display: flex">
         <button id="btnActualizacion" onClick="modificarEncabezado()" style="margin-right: 10px">Establecer Encabezado</button>
-        <button id="btnUndo" disabled>Encabezado Anterior</button>
+        <button id="btnUndo" onClick="restablecer()" disabled>Encabezado Anterior</button>
     </div>
     <h1 id="encabezado">...</h1>
 
@@ -36,10 +36,32 @@
 
         const btnUndo = document.getElementById('btnUndo')
         const tituloEncabezado = document.getElementById('encabezado')
-        const inputEncabezado = document.getElementById('inputEncabezado')
-
+        const encabezados = [];
+        
         function modificarEncabezado() {
-            /* Tu código aquí */
+            const inputEncabezado = document.getElementById('inputEncabezado');
+            if(inputEncabezado != ''){
+                tituloEncabezado.innerText = inputEncabezado.value;
+                encabezados[encabezados.length] = inputEncabezado.value;
+                inputEncabezado.value = '';
+                btnUndo.innerText = `Encabezado Anterior - ${encabezados.length}`;
+                if(encabezados.length > 1)
+                    btnUndo.disabled = false;
+            }
+            else
+                alert('El valor no puede ser vacío');
+        }
+
+        function restablecer(){
+            encabezados.pop();
+            if(encabezados.length != 0){
+                btnUndo.innerText = `Encabezado Anterior - ${encabezados.length}`;
+                tituloEncabezado.innerText = encabezados[encabezados.length-1];
+            }else{
+                btnUndo.innerText = `Encabezado Anterior`;
+                tituloEncabezado.innerText = '';
+                btnUndo.disabled = true;
+            }
         }
     </script>
 </body>
