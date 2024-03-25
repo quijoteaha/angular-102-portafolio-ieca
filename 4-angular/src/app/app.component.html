@@ -85,10 +85,9 @@
                 <!-- v16 -->
                 <li *ngFor="let persona of listaPersonas; index as i;">
                     <div>
-                        <strong>{{ persona }}</strong>
                         <!-- EJERCICIO 01 -->
                         <!-- Agregar funcionalidad para eliminar el nombre de la persona de la lista utilizando el span con ❌ -->
-                        <span> ❌ </span>
+                        <strong>{{ persona }}</strong> <span (click)="borrarPersona(i)" class="borrar">❌</span>
                     </div>
                 </li>
 
@@ -154,6 +153,7 @@
                     type="password" 
                     required 
                     name="passkey"
+                    pattern="[a-z0-9._%+-]{8,}$"
                     [(ngModel)]="registroInputs.passkey"
                     #passkey="ngModel"
                 >
@@ -162,7 +162,7 @@
             <button [disabled]="registroForm.invalid" type="submit">Registrar</button>
             <!-- EJERCICIO 03 -->
             <!-- * Habilitar botón para limpiar información -->
-            <button>Limpiar</button>
+            <button [disabled]="registroForm.invalid" type="submit">Limpiar</button>
         </form>
     </div>
 
